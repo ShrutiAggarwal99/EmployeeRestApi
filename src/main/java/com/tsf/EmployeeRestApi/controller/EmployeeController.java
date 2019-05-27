@@ -32,20 +32,6 @@ public class EmployeeController {
         return employeeRepository.findAll();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/getEmployee")
-    public Employee fun3(@RequestParam(name = "id") Long employeeID){
-        Employee reqEmployee;
-        try {
-            reqEmployee = employeeRepository.getOne(employeeID);
-            return reqEmployee;
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-
     //UPDATE
     @RequestMapping(method = RequestMethod.PUT, value = "/updateEmployee")
     public String fun4(@RequestParam(name = "id") Long employeeID, @RequestParam(name = "name", defaultValue = "false") String newName,
